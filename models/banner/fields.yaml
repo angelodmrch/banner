@@ -1,0 +1,92 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    toolbar:
+        type: partial
+        path: product_toolbar
+        cssClass: collapse-visible
+
+tabs:
+    stretch: true
+    fields:
+        status:
+            tab: Geral
+            label: Publicado
+            span: left
+            type: switch
+            default: 1
+
+        title:
+            tab: Geral
+            label: Título
+            span: full
+            type: text
+
+        description:
+            tab: Geral
+            label: Descrição
+            span: full
+            type: richeditor
+
+        published_at:
+            tab: Geral
+            label: Data de Publicação
+            span: left
+            type: datepicker
+            mode: datetime
+
+        link_on:
+            tab: Geral
+            label: Possui Link?
+            type: switch
+            span: left
+
+        link:
+            tab: Geral
+            label: Link
+            type: text
+            span: left
+            trigger:
+                action: show
+                field: link_on
+                condition: checked
+
+        btn_title:
+            tab: Geral
+            label: Título do botão
+            type: text
+            span: left
+            trigger:
+                action: show
+                field: link_on
+                condition: checked
+
+        target:
+            tab: Geral
+            label: Target
+            commentAbove: Abrir link em uma nova guia ou na mesma guia
+            type: radio
+            options:
+                _self: Mesma Guia
+                _blank: Nova Guia
+            span: left
+            trigger:
+                action: show
+                field: link_on
+                condition: checked   
+
+        area:
+            tab: Geral
+            label: Area
+            type: checkboxlist
+            quickselect: true
+
+        image:
+            tab: Geral
+            label: Banner
+            type: fileupload
+            mode: image
+            required: true
+            commentAbove: "Utilize imagem com tamanho de no máximo: 1920x700"

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner
+
+# Model Form Field configuration
+form: $/dmrch/banner/models/banner/fields.yaml
+
+# Model Class name
+modelClass: Dmrch\Banner\Models\Banner
+
+# Default redirect location
+defaultRedirect: dmrch/banner/banner
+
+# Create page
+create:
+    title: Novo Banner
+    redirect: dmrch/banner/banner/update/:id
+    redirectClose: dmrch/banner/banner
+
+# Update page
+update:
+    title: Editar Banner
+    redirect: dmrch/banner/banner
+    redirectClose: dmrch/banner/banner
+
+# Preview page
+preview:
+    title: Visualizar Banner

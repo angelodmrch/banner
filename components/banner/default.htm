@@ -1,0 +1,42 @@
+
+{% set banners = __SELF__.banners %}
+<div id="banner-container" style="position: relative;">
+
+<!--a class="prev-banner"><i class="zmdi zmdi-caret-left"></i></a-->
+
+<div id="banner-carousel" class="{{ classe }}">
+	{% for getB in banners %}	
+		<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; width: 100%; min-height: 300px;">
+		<!-- 	<img src="{{ getB.image.getPath() }}" alt="{{ getB.title }}"> -->
+			<span class="item-description">
+				{% if getB.description %}
+					<p>{{ getB.description|raw }}</p>
+				{% endif %}
+
+			</span>			
+		</div>	
+	{% endfor %}
+</div>
+
+<!--a class="next-banner"><i class="zmdi zmdi-caret-right"></i></a-->
+
+</div>
+
+{% put scripts %}
+	<script src="{{ ['bower_components/owl.carousel/dist/owl.carousel.js']|theme }}"></script>
+
+		<script>
+		$('#banner-carousel').owlCarousel({
+			loop: true,
+		    items: 1,
+		    dots: true,
+		    autoplay: true,
+			autoplayTimeout: 5000,
+			animateOut: 'fadeOut'
+		});
+	</script>
+{% endput %}
+
+{% put styles %}
+	<link href="{{ ['bower_components/owl.carousel/dist/assets/owl.carousel.min.css']|theme }}" rel="stylesheet">
+{% endput %}

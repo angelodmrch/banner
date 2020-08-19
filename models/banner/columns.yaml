@@ -1,0 +1,32 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    ordem:
+        label: Ordem
+        type: partial
+        path: ~/plugins/dmrch/banner/models/banner/_ordem.htm
+
+    image:
+        label: Imagem
+        type: partial
+        path: ~/plugins/dmrch/banner/models/banner/_image.htm
+
+    title:
+        label: Título
+        searchable: true
+
+    area:
+        label: Area
+        searchable: true
+
+    status:
+        label: Status
+        type: partial
+        path: ~/plugins/dmrch/banner/models/banner/_view_column.htm
+
+    created_at:
+        label: Cadastrado em
+        type: datetime
+        format: d/m/Y H:i:s

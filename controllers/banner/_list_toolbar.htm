@@ -1,0 +1,36 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('dmrch/banner/banner/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        Novo Banner
+    </a>
+
+    <button
+        class="btn btn-default oc-icon-trash-o btn-for-disabled"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDelete"
+        data-request-confirm="Deseja realmente deletar?"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$('.btn-for-disabled').prop('disabled', true)"
+        data-stripe-load-indicator>
+        <?= e(trans('backend::lang.list.delete_selected')) ?>
+    </button>
+
+    <button
+        id="updatePosition"
+        class="btn btn-reorder oc-icon-list-ol"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.index_reposition').map(function(){  return $(this).val() }).get()
+        })"
+        data-request-success="initializeSorting();"
+        data-request="onUpdatePosition"
+        data-stripe-load-indicator>
+        Update Order
+    </button>
+</div>

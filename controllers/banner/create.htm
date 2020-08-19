@@ -1,0 +1,16 @@
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+        <div class="layout fancy-layout">
+            <div class="layout-row">
+                <?= $this->formRender() ?>
+            </div>
+        </div>
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('dmrch/banner/banner') ?>" class="btn btn-default">Return to m banner list</a></p>
+
+<?php endif ?>
