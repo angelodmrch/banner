@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Banner
+name: dmrch.banner::lang.banner.name
 
 # Model Form Field configuration
 form: $/dmrch/banner/models/banner/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: dmrch/banner/banner
 
 # Create page
 create:
-    title: Novo Banner
+    title: dmrch.banner::lang.banner.create
     redirect: dmrch/banner/banner/update/:id
     redirectClose: dmrch/banner/banner
 
 # Update page
 update:
-    title: Editar Banner
+    title: dmrch.banner::lang.banner.update
     redirect: dmrch/banner/banner
     redirectClose: dmrch/banner/banner
 
 # Preview page
 preview:
-    title: Visualizar Banner
+    title: dmrch.banner::lang.banner.preview

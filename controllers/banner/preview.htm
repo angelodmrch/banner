@@ -1,14 +1,19 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('dmrch/banner/banner') ?>"><?= e(trans('dmrch.banner::lang.banner.banners')) ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
 <?php if (!$this->fatalError): ?>
 
-    <div class="layout fancy-layout">
-        <div class="layout-row">
-        	<?= $this->formRenderPreview() ?>
-    	</div>
+    <div class="form-preview">
+        <?= $this->formRenderPreview() ?>
     </div>
 
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('dmrch/banner/banner') ?>" class="btn btn-default">Return to m banner list</a></p>
+    <p><a href="<?= Backend::url('dmrch/banner/banner') ?>" class="btn btn-default"><?= e(trans('dmrch.banner::lang.banner.return_to_banners')) ?></a></p>
 
 <?php endif ?>

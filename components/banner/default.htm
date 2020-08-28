@@ -4,7 +4,7 @@
 
 <!--a class="prev-banner"><i class="zmdi zmdi-caret-left"></i></a-->
 
-<div id="banner-carousel" class="{{ classe }}">
+<div id="banner-carousel" class="owl-carousel">
 	{% for getB in banners %}	
 		<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; width: 100%; min-height: 300px;">
 		<!-- 	<img src="{{ getB.image.getPath() }}" alt="{{ getB.title }}"> -->

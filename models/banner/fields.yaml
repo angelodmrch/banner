@@ -3,90 +3,71 @@
 # ===================================
 
 fields:
-    toolbar:
-        type: partial
-        path: product_toolbar
-        cssClass: collapse-visible
+    status:
+        label: dmrch.banner::lang.form.status
+        span: left
+        type: switch
+        default: 1
 
-tabs:
-    stretch: true
-    fields:
-        status:
-            tab: Geral
-            label: Publicado
-            span: left
-            type: switch
-            default: 1
+    published_at:
+        label: dmrch.banner::lang.form.published_at
+        span: left
+        type: datepicker
+        mode: datetime
 
-        title:
-            tab: Geral
-            label: Título
-            span: full
-            type: text
+    title:
+        label: dmrch.banner::lang.form.title
+        span: full
+        type: text
 
-        description:
-            tab: Geral
-            label: Descrição
-            span: full
-            type: richeditor
+    description:
+        label: dmrch.banner::lang.form.description
+        span: full
+        type: richeditor
 
-        published_at:
-            tab: Geral
-            label: Data de Publicação
-            span: left
-            type: datepicker
-            mode: datetime
+    link_on:
+        label: dmrch.banner::lang.form.link_on
+        type: switch
+        span: left
 
-        link_on:
-            tab: Geral
-            label: Possui Link?
-            type: switch
-            span: left
+    link:
+        label: dmrch.banner::lang.form.link
+        type: text
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked
 
-        link:
-            tab: Geral
-            label: Link
-            type: text
-            span: left
-            trigger:
-                action: show
-                field: link_on
-                condition: checked
+    btn_title:
+        label: dmrch.banner::lang.form.btn_title
+        type: text
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked
 
-        btn_title:
-            tab: Geral
-            label: Título do botão
-            type: text
-            span: left
-            trigger:
-                action: show
-                field: link_on
-                condition: checked
+    target:
+        label: dmrch.banner::lang.form.target
+        commentAbove: dmrch.banner::lang.form.target_comment
+        type: radio
+        options:
+            _self: dmrch.banner::lang.form.self
+            _blank: dmrch.banner::lang.form.blank
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked   
 
-        target:
-            tab: Geral
-            label: Target
-            commentAbove: Abrir link em uma nova guia ou na mesma guia
-            type: radio
-            options:
-                _self: Mesma Guia
-                _blank: Nova Guia
-            span: left
-            trigger:
-                action: show
-                field: link_on
-                condition: checked   
+    area:
+        label: dmrch.banner::lang.form.area
+        type: checkboxlist
+        quickselect: true
 
-        area:
-            tab: Geral
-            label: Area
-            type: checkboxlist
-            quickselect: true
-
-        image:
-            tab: Geral
-            label: Banner
-            type: fileupload
-            mode: image
-            required: true
-            commentAbove: "Utilize imagem com tamanho de no máximo: 1920x700"
+    image:
+        label: dmrch.banner::lang.form.image
+        type: fileupload
+        mode: image
+        required: true

@@ -4,29 +4,28 @@
 
 columns:
     ordem:
-        label: Ordem
+        label: dmrch.banner::lang.form.ordem
         type: partial
         path: ~/plugins/dmrch/banner/models/banner/_ordem.htm
 
     image:
-        label: Imagem
+        label: dmrch.banner::lang.form.image
         type: partial
         path: ~/plugins/dmrch/banner/models/banner/_image.htm
 
     title:
-        label: Título
+        label: dmrch.banner::lang.form.title
         searchable: true
 
     area:
-        label: Area
+        label: dmrch.banner::lang.form.area
         searchable: true
 
     status:
-        label: Status
+        label: dmrch.banner::lang.form.status
         type: partial
-        path: ~/plugins/dmrch/banner/models/banner/_view_column.htm
+        path: ~/plugins/dmrch/banner/models/banner/_status.htm
 
     created_at:
-        label: Cadastrado em
-        type: datetime
-        format: d/m/Y H:i:s
+        label: dmrch.banner::lang.form.created_at
+        type: date

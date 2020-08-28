@@ -1,9 +1,10 @@
 <?php namespace Dmrch\Banner\Controllers;
 
 use BackendMenu;
+use Flash;
+use Lang;
 use Backend\Classes\Controller;
 use Dmrch\Banner\Models\Banner as ModBanner;
-use Flash;
 
 /**
  * M Banner Back-end Controller
@@ -17,8 +18,6 @@ class Banner extends Controller
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
-
-    public $bodyClass = 'compact-container';
 
     public function __construct()
     {
@@ -39,7 +38,6 @@ class Banner extends Controller
     {
         $query->orderBy('ordem', 'asc');
     }
-
     
     /*
      * Reorder the row positions
@@ -57,25 +55,8 @@ class Banner extends Controller
                 $moved[] = $id;
                 $position++;
             }
-            Flash::success('Successfully re-ordered records.');
+            Flash::success(Lang::get('rainlab.blog::lang.banner.reorder_success'));
         }
-        return $this->listRefresh();
-    }
-
-    public function index_onDelete()
-    {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-
-            foreach ($checkedIds as $postId) {
-                if ((!$post = ModBanner::find($postId)))
-                    continue;
-
-                $post->delete();
-            }
-
-            \Flash::success('Deletado com sucesso.');
-        }
-
         return $this->listRefresh();
     }
 }

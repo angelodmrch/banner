@@ -1,15 +1,19 @@
 <?php namespace Dmrch\Banner\Models;
 
 use Model;
+use Lang;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use ApplicationException;
+use ValidationException;
 
 /**
  * Banner Model
  */
 class Banner extends Model
 {
+
+    use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
@@ -56,5 +60,5 @@ class Banner extends Model
         }
 
         return Page::listInTheme($theme)->lists('title', 'id');
-    }
+    }    
 }

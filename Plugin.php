@@ -1,6 +1,7 @@
 <?php namespace Dmrch\Banner;
 
 use Backend;
+use Controller;
 use System\Classes\PluginBase;
 
 /**
@@ -17,8 +18,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Banner',
-            'description' => 'Plugin para cadastro de Banners',
+            'name'        => 'dmrch.banner::lang.plugin.name',
+            'description' => 'dmrch.banner::lang.plugin.description',
             'author'      => 'Fonix',
             'icon'        => 'icon-file-image-o'
         ];
@@ -65,8 +66,8 @@ class Plugin extends PluginBase
     {
         return [
             'dmrch.banner.some_permission' => [
-                'tab' => 'Banner',
-                'label' => 'Banners'
+                'tab' => 'dmrch.banner::lang.plugin.name',
+                'label' => 'dmrch.banner::lang.banner.banners'
             ],
         ];
     }
@@ -80,13 +81,12 @@ class Plugin extends PluginBase
     {
         return [
             'banner' => [
-                'label'       => 'Banners',
+                'label'       => 'dmrch.banner::lang.banner.banners',
                 'url'         => Backend::url('dmrch/banner/banner'),
                 'icon'        => 'icon-file-image-o',
                 'permissions' => ['dmrch.banner.*'],
-                'order'       => 1,
+                'order'       => 10,
             ],
         ];
     }
-
 }

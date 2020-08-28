@@ -19,12 +19,6 @@ class Banner extends ComponentBase
     public function defineProperties()
     {
         return [
-            'classe' => [
-                 'title'             => 'Classe',
-                 'description'       => 'Classe do plugin Jquery',
-                 'default'           => '0',
-                 'type'              => 'string'
-            ],
             'area' => [
                  'title'             => 'Area',
                  'default'           => 'Home',

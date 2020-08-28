@@ -1,2 +1,4 @@
 <?php
+
+if (json_decode($record)->image)
 echo '<img src="'. json_decode($record)->image->path .'" height="60px;">';

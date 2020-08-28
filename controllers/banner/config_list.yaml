@@ -9,7 +9,7 @@ list: $/dmrch/banner/models/banner/columns.yaml
 modelClass: Dmrch\Banner\Models\Banner
 
 # List Title
-title: Gerenciar Banners
+title: dmrch.banner::lang.banner.list_title
 
 # Link URL for each record
 recordUrl: dmrch/banner/banner/update/:id
@@ -20,6 +20,9 @@ noRecordsMessage: backend::lang.list.no_records
 # Records to display per page
 recordsPerPage: 20
 
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
 # Displays the list column set up button
 showSetup: true
 
@@ -27,9 +30,9 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-defaultSort:
-    column: ordem
-    direction: asc
+# defaultSort:
+#     column: created_at
+#     direction: desc
 
 # Display checkboxes next to each record
 showCheckboxes: true
