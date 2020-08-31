@@ -2,7 +2,7 @@
 
 A simple, banner management plugin for October CMS.
 
-Requires [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/)
+Requires [Tiny Slider 2](https://ganlanyuan.github.io/tiny-slider/)
 
 ## Implementing front-end pages
 

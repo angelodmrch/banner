@@ -21,15 +21,20 @@ class Banner extends ComponentBase
         return [
             'area' => [
                  'title'             => 'Area',
-                 'default'           => 'Home',
+                 'default'           => 'home',
+                 'type'              => 'string'
+            ],
+            'controls' => [
+                 'title'             => 'controls',
+                 'default'           => 'true',
+                 'type'              => 'string'
+            ], 
+            'nav' => [
+                 'title'             => 'nav',
+                 'default'           => 'true',
                  'type'              => 'string'
             ]
         ];
-    }
-
-    public function onRender()
-    {
-        $this->page['classe'] = $this->property('classe');
     }
 
     public function onRun()

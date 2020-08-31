@@ -1,42 +1,41 @@
 
 {% set banners = __SELF__.banners %}
+
 <div id="banner-container" style="position: relative;">
+	<div id="banner-carousel" class="my-slider">
+		{% for getB in banners %}	
+			<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; min-height: 500px;">
+				<span class="item-description">
+					{% if getB.description %}
+						<p>{{ getB.description|raw }}</p>
+					{% endif %}
 
-<!--a class="prev-banner"><i class="zmdi zmdi-caret-left"></i></a-->
-
-<div id="banner-carousel" class="owl-carousel">
-	{% for getB in banners %}	
-		<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; width: 100%; min-height: 300px;">
-		<!-- 	<img src="{{ getB.image.getPath() }}" alt="{{ getB.title }}"> -->
-			<span class="item-description">
-				{% if getB.description %}
-					<p>{{ getB.description|raw }}</p>
-				{% endif %}
-
-			</span>			
-		</div>	
-	{% endfor %}
-</div>
-
-<!--a class="next-banner"><i class="zmdi zmdi-caret-right"></i></a-->
-
+					{% if getB.link_on %}
+						<a href="{{ getB.link }}" target="{{ getB.target }}" class="btn btn-primary">{{ getB.btn_title }}</a>
+					{% endif %}
+				</span>			
+			</div>	
+		{% endfor %}
+	</div>
 </div>
 
 {% put scripts %}
-	<script src="{{ ['bower_components/owl.carousel/dist/owl.carousel.js']|theme }}"></script>
-
-		<script>
-		$('#banner-carousel').owlCarousel({
-			loop: true,
-		    items: 1,
-		    dots: true,
-		    autoplay: true,
-			autoplayTimeout: 5000,
-			animateOut: 'fadeOut'
+	<script>
+		var slider = tns({
+		    container: '#banner-carousel',
+		    mode: "gallery",
+		    items: 1,    		
+    		speed: 1000,
+    		loop: true,
+    		autoplayHoverPause: true,
+    		autoplayButtonOutput: false,
+    		center: true,
+    		autoplayTimeout: 7000,
+    		autoplay: true,
+    		controls: {{ __SELF__.property('controls') }},
+    		nav: {{ __SELF__.property('nav') }},
+    		controlsPosition: 'bottom',
+    		navPosition: 'bottom',
 		});
 	</script>
-{% endput %}
-
-{% put styles %}
-	<link href="{{ ['bower_components/owl.carousel/dist/assets/owl.carousel.min.css']|theme }}" rel="stylesheet">
 {% endput %}
