@@ -19,7 +19,8 @@ return [
         'reorder_succes' => 'Ordering successfully updated',
     ],
     'form' => [
-        'ordem' => 'Order',
+        'id' => 'ID',
+        'sort_order' => 'Order',
         'status' => 'Published',
         'published_at' => 'Publication date',
         'title' => 'Title',

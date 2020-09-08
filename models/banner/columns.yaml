@@ -3,10 +3,11 @@
 # ===================================
 
 columns:
-    ordem:
-        label: dmrch.banner::lang.form.ordem
-        type: partial
-        path: ~/plugins/dmrch/banner/models/banner/_ordem.htm
+    sort_order:
+        label: dmrch.banner::lang.form.sort_order
+
+    id:
+        label: dmrch.banner::lang.form.id
 
     image:
         label: dmrch.banner::lang.form.image

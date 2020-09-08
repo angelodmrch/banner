@@ -54,7 +54,7 @@ class Banner extends ComponentBase
                 $query->where('published_at', '<=', date('Y-m-d H:i:s'))
                     ->orWhere('published_at', NULL);
             })
-            ->orderBy('ordem','asc')
+            ->orderBy('sort_order','asc')
             ->orderBy('id','desc')->get();
     }
 }

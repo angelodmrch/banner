@@ -14,6 +14,9 @@ class Banner extends Model
 {
 
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sortable;
+
+    const SORT_ORDER = 'sort_order';
 
     /**
      * @var string The database table used by the model.
@@ -24,7 +27,7 @@ class Banner extends Model
      * Validation
      */
     public $rules = [
-        'image' => 'required'
+       //'image' => 'required'
     ];
 
     /**
@@ -60,5 +63,19 @@ class Banner extends Model
         }
 
         return Page::listInTheme($theme)->lists('title', 'id');
-    }    
+    }
+
+    public function afterCreate() {
+        $banner = Banner::find($this->id);
+        $banner->sort_order = 1;
+        $banner->save();
+
+        $sort_order = 2;
+        foreach (Banner::where('id','<>', $this->id)->orderBy('sort_order', 'asc')->get() as $banner) {
+            $banner->sort_order = $sort_order;
+            $banner->save();
+
+            $sort_order++;
+        }
+    }
 }

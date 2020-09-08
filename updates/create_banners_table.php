@@ -18,7 +18,7 @@ class CreateBannersTable extends Migration
             $table->enum('link_on', ['0','1']);
             $table->enum('target', ['_blank','_self']);
             $table->tinyInteger('status');
-            $table->integer('ordem')->nullable();
+            $table->integer('sort_order')->nullable();
             $table->text('area')->nullable();
             $table->timestamp('published_at')->nullable()->useCurrent();
             $table->timestamps();

@@ -19,7 +19,8 @@ return [
         'reorder_succes' => 'Ordenação atualiza com sucesso',
     ],
     'form' => [
-        'ordem' => 'Ordem',
+        'id' => 'ID',
+        'sort_order' => 'Ordem',
         'status' => 'Publicado',
         'published_at' => 'Data de publicação',
         'title' => 'Título',

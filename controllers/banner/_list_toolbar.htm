@@ -19,16 +19,8 @@
         <?= e(trans('backend::lang.list.delete_selected')) ?>
     </button>
 
-    <button
-        id="updatePosition"
-        class="btn btn-reorder oc-icon-list-ol"
-        disabled="disabled"
-        onclick="$(this).data('request-data', {
-            checked: $('.index_reposition').map(function(){  return $(this).val() }).get()
-        })"
-        data-request-success="initializeSorting();"
-        data-request="onUpdatePosition"
-        data-stripe-load-indicator>
+    <a href="<?= Backend::url('dmrch/banner/banner/reorder') ?>" 
+        class="btn btn-default oc-icon-sitemap">
         <?= e(trans('dmrch.banner::lang.banner.reorder')) ?>
-    </button>
+    </a>
 </div>
