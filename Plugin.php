@@ -20,7 +20,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'dmrch.banner::lang.plugin.name',
             'description' => 'dmrch.banner::lang.plugin.description',
-            'author'      => 'Fonix',
+            'author'      => 'Angelo Demarchi',
             'icon'        => 'icon-file-image-o'
         ];
     }
