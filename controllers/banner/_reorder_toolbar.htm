@@ -1,5 +1,7 @@
+<?php $url = explode('/',$_SERVER['REQUEST_URI']); $id = array_reverse($url)[0]; ?>
+
 <div data-control="toolbar">
-    <a href="<?= Backend::url('dmrch/banner/banner') ?>" class="btn btn-primary oc-icon-caret-left">
+    <a href="<?= Backend::url('dmrch/banner/group/update') ?>/<?= $id ?>" class="btn btn-primary oc-icon-caret-left">
         <?= e(trans('backend::lang.form.complete')) ?>
     </a>
 </div>

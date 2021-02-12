@@ -45,7 +45,9 @@ class Banner extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'group_id' => ['Dmrch\Banner\Models\Group'],
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
@@ -54,16 +56,6 @@ class Banner extends Model
         'image' => ['System\Models\File', 'delete' => true],
     ];    
     public $attachMany = [];
-
-    public $jsonable = ['area'];
-
-    public function getAreaOptions() {
-        if (!$theme = Theme::getEditTheme()) {
-            throw new ApplicationException('Unable to find the active theme.');
-        }
-
-        return Page::listInTheme($theme)->lists('title', 'id');
-    }
 
     public function afterCreate() {
         $banner = Banner::find($this->id);

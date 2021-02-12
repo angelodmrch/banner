@@ -19,9 +19,9 @@ class Banner extends ComponentBase
     public function defineProperties()
     {
         return [
-            'area' => [
+            'group_id' => [
                  'title'             => 'Area',
-                 'default'           => 'home',
+                 'default'           => '1',
                  'type'              => 'string'
             ],
             'controls' => [
@@ -37,19 +37,13 @@ class Banner extends ComponentBase
         ];
     }
 
-    public function onRun()
-    {
-        $this->banners = $this->getBanners($this->property('area'));
+    public function onRun() {
+        $this->banners = $this->getBanners();
     }
 
-    public function getBanners($area)
-    {
+    public function getBanners() {
+
         return ModBanner::where('status', 1)
-            ->where(function ($query) use ($area) {
-                $query->where('area','LIKE','%"'.$area.'"%')
-                    ->orWhere('area','0')
-                    ->orWhere('area',NULL);
-            })
             ->where(function ($query) {
                 $query->where('published_at', '<=', date('Y-m-d H:i:s'))
                     ->orWhere('published_at', NULL);

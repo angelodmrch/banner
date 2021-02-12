@@ -65,7 +65,7 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'dmrch.banner.some_permission' => [
+            'dmrch.banner.permission' => [
                 'tab' => 'dmrch.banner::lang.plugin.name',
                 'label' => 'dmrch.banner::lang.banner.banners'
             ],
@@ -82,7 +82,7 @@ class Plugin extends PluginBase
         return [
             'banner' => [
                 'label'       => 'dmrch.banner::lang.banner.banners',
-                'url'         => Backend::url('dmrch/banner/banner'),
+                'url'         => Backend::url('dmrch/banner/group'),
                 'icon'        => 'icon-file-image-o',
                 'permissions' => ['dmrch.banner.*'],
                 'order'       => 10,

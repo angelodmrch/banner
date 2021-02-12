@@ -1,0 +1,7 @@
+<?php $url = explode('/',$_SERVER['REQUEST_URI']); $id = array_reverse($url)[0]; ?>
+
+<a
+    href="<?= Backend::url('dmrch/banner/banner/reorder') ?>/<?= $id ?>"
+    class="btn btn-sm btn-reorder oc-icon-list-ol">
+    Reorder
+</a>

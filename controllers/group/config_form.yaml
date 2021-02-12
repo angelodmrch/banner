@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Group
+
+# Model Form Field configuration
+form: $/dmrch/banner/models/group/fields.yaml
+
+# Model Class name
+modelClass: Dmrch\Banner\Models\Group
+
+# Default redirect location
+defaultRedirect: dmrch/banner/group
+
+# Create page
+create:
+    title: Create Group
+    redirect: dmrch/banner/group/update/:id
+    redirectClose: dmrch/banner/group
+
+# Update page
+update:
+    title: Edit Group
+    redirect: dmrch/banner/group
+    redirectClose: dmrch/banner/group
+
+# Preview page
+preview:
+    title: Preview Group

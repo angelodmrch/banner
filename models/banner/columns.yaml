@@ -6,9 +6,6 @@ columns:
     sort_order:
         label: dmrch.banner::lang.form.sort_order
 
-    id:
-        label: dmrch.banner::lang.form.id
-
     image:
         label: dmrch.banner::lang.form.image
         type: partial
@@ -16,10 +13,6 @@ columns:
 
     title:
         label: dmrch.banner::lang.form.title
-        searchable: true
-
-    area:
-        label: dmrch.banner::lang.form.area
         searchable: true
 
     status:

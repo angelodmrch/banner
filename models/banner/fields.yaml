@@ -60,12 +60,7 @@ fields:
             action: show
             field: link_on
             condition: checked   
-
-    area:
-        label: dmrch.banner::lang.form.area
-        type: checkboxlist
-        quickselect: true
-
+            
     image:
         label: dmrch.banner::lang.form.image
         type: fileupload

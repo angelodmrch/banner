@@ -11,6 +11,7 @@ class CreateBannersTable extends Migration
         Schema::create('dmrch_banner_banners', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('group_id');
             $table->string('title', 255);
             $table->text('description');
             $table->text('link');
@@ -19,7 +20,6 @@ class CreateBannersTable extends Migration
             $table->enum('target', ['_blank','_self']);
             $table->tinyInteger('status');
             $table->integer('sort_order')->nullable();
-            $table->text('area')->nullable();
             $table->timestamp('published_at')->nullable()->useCurrent();
             $table->timestamps();
         });

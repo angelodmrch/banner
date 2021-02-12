@@ -1,23 +1,22 @@
+<?php $url = explode('/',$_SERVER['REQUEST_URI']); $id = array_reverse($url)[0]; ?>
+
 <?php foreach ($records as $record): ?>
 
-    <li data-record-id="<?= $record->getKey() ?>"
-        <?php if ($reorderSortMode === 'simple') : ?>
-            data-record-sort-order="<?= $record->{$record->getSortOrderColumn()} ?>"
-        <?php endif ?>
-    >
-        <div class="record">
-            <a href="javascript:;" class="move"></a>
-            <span><?=  $record->getKey() ?> | <?= e($this->reorderGetRecordName($record)) ?></span>
-            <input name="record_ids[]" type="hidden" value="<?= $record->getKey() ?>" />
-        </div>
+    <?php if ($record->group_id == $id): ?>
 
-        <?php if ($reorderShowTree): ?>
-            <ol>
-                <?php if ($record->children): ?>
-                    <?= $this->reorderMakePartial('records', ['records' => $record->children]) ?>
-                <?php endif ?>
-            </ol>
-        <?php endif ?>
-    </li>
+        <li data-record-id="<?= $record->getKey() ?>"
+            <?php if ($reorderSortMode === 'simple') : ?>
+                data-record-sort-order="<?= $record->{$record->getSortOrderColumn()} ?>"
+            <?php endif ?>
+        >
+            <div class="record">
+                <a href="javascript:;" class="move"></a>
+                <span><?=  $record->getKey() ?> | <?= e($this->reorderGetRecordName($record)) ?> | <img src="<?php echo $record->image['path'] ?>" height="60px;"></span>
+                <input name="record_ids[]" type="hidden" value="<?= $record->getKey() ?>" />
+            </div>
+
+        </li>
+
+    <?php endif; ?>
 
 <?php endforeach ?>

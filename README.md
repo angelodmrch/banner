@@ -8,9 +8,9 @@ Requires [Tiny Slider 2](https://ganlanyuan.github.io/tiny-slider/)
 
 Use the `banners` component to display a banner carousel. The component has the following properties:
 
-The banners component injects the following variables to the page where it's used:
-
-* **area** - id of the page where de banners will be displayed.
+* **group_id** - id of the banner group.
+* **controls** - show "Prev" and "Next" buttons (default: true).
+* **nav** - show dots navigation (default: true).
 
 The example shows the basic component usage on the banner:
 
@@ -19,12 +19,12 @@ The example shows the basic component usage on the banner:
     id = "home"
 
     [banners]
-    area = "home"
 
     ==
 
     ...
 
-    {% component 'banners' %}
+    {% component 'banners' group_id='1' controls='false' nav='false' %}
+
 
     ...

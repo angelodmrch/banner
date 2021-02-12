@@ -1,0 +1,9 @@
+banners:
+    label: Banners
+    view:
+        form: $/dmrch/banner/models/banner/fields.yaml
+        list: $/dmrch/banner/models/banner/columns.yaml
+        toolbarButtons: create|delete|reorder
+    manage:
+        form: $/dmrch/banner/models/banner/fields.yaml
+        recordsPerPage: 10

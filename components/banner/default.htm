@@ -1,20 +1,25 @@
-
 {% set banners = __SELF__.banners %}
 
-<div id="banner-container" style="position: relative;">
-	<div id="banner-carousel" class="my-slider">
-		{% for getB in banners %}	
-			<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; min-height: 500px;">
-				<span class="item-description">
-					{% if getB.description %}
-						<p>{{ getB.description|raw }}</p>
-					{% endif %}
+{% set group_id = __SELF__.property('group_id') %}
 
-					{% if getB.link_on %}
-						<a href="{{ getB.link }}" target="{{ getB.target }}" class="btn btn-primary">{{ getB.btn_title }}</a>
-					{% endif %}
-				</span>			
-			</div>	
+
+<div class="banner-container" style="position: relative;">
+	<div id="banner-carousel-{{ group_id }}" class="banner-slider">
+		{% for getB in banners %}
+
+			{% if getB.group_id == group_id %}
+				<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; min-height: 500px;">
+					<span class="item-description">
+						{% if getB.description %}
+							<p>{{ getB.description|raw }}</p>
+						{% endif %}
+
+						{% if getB.link_on %}
+							<a href="{{ getB.link }}" target="{{ getB.target }}" class="btn btn-primary">{{ getB.btn_title }}</a>
+						{% endif %}
+					</span>			
+				</div>
+			{% endif %}
 		{% endfor %}
 	</div>
 </div>
@@ -22,7 +27,7 @@
 {% put scripts %}
 	<script>
 		var slider = tns({
-		    container: '#banner-carousel',
+		    container: '#banner-carousel-{{ group_id }}',
 		    mode: "gallery",
 		    items: 1,    		
     		speed: 1000,
