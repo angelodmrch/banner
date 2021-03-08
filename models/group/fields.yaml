@@ -6,15 +6,6 @@ fields:
     title:
         label: Name
         type: text
-        span: left
-
-    code:
-        label: Slug
-        type: text
-        span: right
-        preset:
-            field: title
-            type: slug
             
     banners:
         type: partial

@@ -46,7 +46,7 @@ class Banner extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'group_id' => ['Dmrch\Banner\Models\Group'],
+        'group' => ['Dmrch\Banner\Models\Group'],
     ];
     public $belongsToMany = [];
     public $morphTo = [];
