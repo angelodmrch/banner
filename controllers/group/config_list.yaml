@@ -9,7 +9,7 @@ list: $/dmrch/banner/models/group/columns.yaml
 modelClass: Dmrch\Banner\Models\Group
 
 # List Title
-title: Manage Groups
+title: dmrch.banner::lang.group.list_title
 
 # Link URL for each record
 recordUrl: dmrch/banner/group/update/:id

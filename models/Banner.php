@@ -12,7 +12,6 @@ use ValidationException;
  */
 class Banner extends Model
 {
-
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sortable;
 

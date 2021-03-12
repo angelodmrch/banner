@@ -1,5 +1,5 @@
 banners:
-    label: Banners
+    label: dmrch.banner::lang.banner.list_title
     view:
         form: $/dmrch/banner/models/banner/fields.yaml
         list: $/dmrch/banner/models/banner/columns.yaml

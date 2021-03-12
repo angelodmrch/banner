@@ -5,8 +5,21 @@ return [
         'name' => 'Banners',
         'description' => 'Plugin para gerenciar Banners.'
     ],
+    'group' => [
+    	'name' => 'Grupo',
+        'groups' => 'Grupos',
+        'delete_confirm' => 'Você realmente deseja excluir este grupo?',
+        'close_confirm' => 'O grupo não foi salvo.',
+        'return_to_grupos' => 'Voltar à lista de grupos',
+        'list_title' => 'Grupos',
+        'create' => 'Novo Grupo',
+        'update' => 'Editar Grupo',
+        'preview' => 'Vizualizar Grupo',
+		'reorder' => 'Atualizar Ordem',
+        'reorder_succes' => 'Ordenação atualiza com sucesso',
+    ],
     'banner' => [
-    	'name' => 'Banner',
+        'name' => 'Banner',
         'banners' => 'Banners',
         'delete_confirm' => 'Você realmente deseja excluir este banner?',
         'close_confirm' => 'O banner não foi salvo.',
@@ -15,7 +28,7 @@ return [
         'create' => 'Novo Banner',
         'update' => 'Editar Banner',
         'preview' => 'Vizualizar Banner',
-		'reorder' => 'Atualizar Ordem',
+        'reorder' => 'Atualizar Ordem',
         'reorder_succes' => 'Ordenação atualiza com sucesso',
     ],
     'form' => [

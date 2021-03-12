@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Group
+name: dmrch.banner::lang.group.name
 
 # Model Form Field configuration
 form: $/dmrch/banner/models/group/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: dmrch/banner/group
 
 # Create page
 create:
-    title: Create Group
+    title: dmrch.banner::lang.group.create
     redirect: dmrch/banner/group/update/:id
     redirectClose: dmrch/banner/group
 
 # Update page
 update:
-    title: Edit Group
+    title: dmrch.banner::lang.group.update
     redirect: dmrch/banner/group
     redirectClose: dmrch/banner/group
 
 # Preview page
 preview:
-    title: Preview Group
+    title: dmrch.banner::lang.group.preview

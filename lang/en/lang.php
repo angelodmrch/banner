@@ -5,6 +5,19 @@ return [
         'name' => 'Banners',
         'description' => 'Plugin to manage Banners.'
     ],
+    'group' => [
+        'name' => 'Group',
+        'groups' => 'Groups',
+        'delete_confirm' => 'Do you really want to delete this group?',
+        'close_confirm' => 'The group was not saved',
+        'return_to_groups' => 'Back to groups list',
+        'list_title' => 'Groups',
+        'create' => 'New Group',
+        'update' => 'Edit Group',
+        'preview' => 'Preview Group',
+        'reorder' => 'Update Order',
+        'reorder_succes' => 'Ordering successfully updated',
+    ],
     'banner' => [
         'name' => 'Banner',
         'banners' => 'Banners',

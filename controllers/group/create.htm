@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('dmrch/banner/group') ?>">Group</a></li>
+        <li><a href="<?= Backend::url('dmrch/banner/group') ?>"><?= e(trans('dmrch.banner::lang.group.groups')) ?></a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -20,9 +20,9 @@
                     data-request="onSave"
                     data-browser-validate
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Creating Group..."
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
                     class="btn btn-primary">
-                    Create
+                    <?= e(trans('backend::lang.form.create')) ?>
                 </button>
                 <button
                     type="button"
@@ -30,12 +30,12 @@
                     data-browser-validate
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Creating Group..."
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>."
                     class="btn btn-default">
-                    Create and Close
+                    <?= e(trans('backend::lang.form.create_and_close')) ?>
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('dmrch/banner/group') ?>">Cancel</a>
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('dmrch/banner/group') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
                 </span>
             </div>
         </div>
@@ -45,6 +45,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('dmrch/banner/group') ?>" class="btn btn-default">Return to group list</a></p>
+    <p><a href="<?= Backend::url('dmrch/banner/group') ?>" class="btn btn-default"><?= e(trans('dmrch.banner::lang.group.return_to_groups')) ?></a></p>
 
 <?php endif ?>
