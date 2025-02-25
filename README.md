@@ -1,6 +1,6 @@
 # Banner Plugin
 
-A simple, banner management plugin for October CMS.
+A simple, banner management plugin for [Winter CMS](https://wintercms.com/) and [October CMS](https://octobercms.com/).
 
 Requires [Tiny Slider 2](https://ganlanyuan.github.io/tiny-slider/)
 
